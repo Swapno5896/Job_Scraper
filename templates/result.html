@@ -5,17 +5,23 @@
     <title>result</title>
 </head>
 <style>
+    table, th, td{
+        border: 5px solid #99a18e;
+    }
+    table{
+        border-collapse: collapse;
+    }
     .content_table{
     border-collapse: collapse;
     margin:25px 0;
-    font-size:1em;
+    font-size:14px;
     min-width:400px;
     border-radius: 5px 5px 0 0;
      overflow: auto;
 
     }
     .content_table thead tr{
-        background-color: aquamarine;
+        background-color: #29725a;
         color: whitesmoke;
         text-align: left;
         font-weight: bold;
@@ -25,19 +31,29 @@
         padding: 12px 15px;
     }
     .content_table tbody td{
-        border-bottom: 1px solid gray;
+        border-bottom: 4px solid gray;
     }
     .content_table tbody tr:nth-of-type(even){
         background-color: #f3f3f3;
     }
     .content_table tbody tr:last-of-type{
-        border-bottom: 2px solid aquamarine;
+        border-bottom: 2px solid #29725a;
     }
- 
+    .skills{
+        overflow: auto;
+        width: 100px;
+        height: 20px;
+    }
+ td,th{
+    padding: 10px;
+ }
+ table{
+    width: 800px;
+ }
 </style>
 <body>
 <!-- For loop logic of jinja template -->
-<table class="content_table">
+<table class="content_table" >
     <thead>
         <tr>
             <th>Company Name </th>
@@ -49,8 +65,8 @@
      {% for job in inputData %}
     <tr>
         <td>{{job['Company_Name']}}</td>
-        <td>{{job['Require Skill']}}</td>
-        <td><a href="{{job['More_Info']}}"> See Detail</a></td>
+        <td class="skills">{{job['Require Skill']}}</td>
+        <td><a target="_blank" href="{{job['More_Info']}}"> See Detail</a></td>
     </tr>
     {% endfor %}
 </tbody>
