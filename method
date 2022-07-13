@@ -1,0 +1,13 @@
+create new project and use conda as virtual environment
+1. make structer of flask app
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/',methods=['GET','POST'])
+def index():
+    return "<h1>Hello, swapno</h1>"
+
+
+
+if __name__ =='__main__':
+    app.run()

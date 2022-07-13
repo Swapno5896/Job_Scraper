@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>result</title>
+</head>
+<body>
+<!-- For loop logic of jinja template -->
+<table>
+    <thead>
+        <tr>
+            <th>Company Name </th>
+            <th>Skills </th>
+            <th>Link</th>
+        </tr>
+    </thead>
+     {% for job in inputData %}
+    <tr>
+        <td>{{job['Company_Name']}}</td>
+        <td>{{job['Require Skill']}}</td>
+        <td><a href="{{job['More_Info']}}"> See Detail</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
